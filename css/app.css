@@ -111,6 +111,7 @@ body {
 
         & > span:hover {
             cursor: default;
+            
         }
 
         .interval-input {
