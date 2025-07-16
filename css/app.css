@@ -1,3 +1,9 @@
+:root {
+    --screen-width: tan(atan2(var(--_w), 1px));
+    --screen-height: tan(atan2(var(--_h), 1px));
+    --correct-size: calc((min(var(--screen-width), var(--screen-height)) * 1px) / 1.5)
+}
+
 * {
     font-family: monospace;
 }
@@ -5,150 +11,161 @@
 body {
     background-color: black;
     color: white;
+
+    &::selection {
+        color: black;
+        background-color: transparent;
+    }
 }
 
-#minutes-input {
-    width: auto;
-    background-color: black;
-    color: #ffffff;
-    font-size: calc(var(--correct-size) / 2.5);
-    outline: none;
-    border: none;
-    text-align: center;
-    appearance: textfield;
-    margin: 0;
-}
-
-#minutes-input:focus {
-    color: #89ddff;
-    outline: none;
-    border: none;
-    appearance: textfield;
-    margin: 0;
-}
-
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
-
-input[type=number] {
-    -moz-appearance: textfield;
-    appearance: textfield;
-}
-
-#minutes-input-container {
+.minutes-input-container {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     align-items: center;
+
+    &::selection {
+        color: black;
+        background-color: #89ddff;
+    }
+
+    .minutes-input {
+        color: #ffffff;
+        background-color: black;
+        width: calc(var(--number-of-characters) * 0.55em);
+        font-size: calc(var(--correct-size) / 2.5);
+        text-align: center;
+        appearance: textfield;
+        outline: none;
+        border: none;
+        margin: 0;
+
+        &:focus {
+            color: #89ddff;
+        }
+    }
 }
 
-#timer {
+.inputs-container {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 250px;
+    transform: translate(-50%, 150%);
+    width: max-content;
+    font-size: max(calc(var(--correct-size) / 15), 14pt);
+
+    .buttons-container {
+        .start-timer-button {
+            margin: 0;
+            padding: 0;
+            border-width: 0;
+            float: left;
+            font-size: inherit;
+            border: none;
+            background: transparent;
+            color: #c3e88d;
+
+            &:hover {
+                text-decoration: underline;
+            }
+
+            &::selection {
+                color:#c3e88d;
+                background-color: transparent;
+            }
+        }
+
+        .reset-timer-button {
+            margin: 0;
+            padding: 0;
+            border-width: 0;
+            float: right;
+            font-size: inherit;
+            border: none;
+            background-color: transparent;
+            color: #f07178;
+
+            &:hover {
+                text-decoration: underline;
+            }
+
+            &::selection {
+                color:#f07178;
+                background-color: transparent;
+            }
+        }
+    }
+
+    .interval-container {
+        font-size: inherit;
+        padding: 0;
+        width: auto;
+
+        &::selection {
+            color: #ffcb6b;
+            background-color: black;
+        }
+
+        .interval-input {
+            border: none;
+            font-size: inherit;
+            margin: none;
+            width: calc(var(--number-of-characters) * 0.55em);
+            padding: none;
+            background-color: black;
+            color: #ffffff;
+            outline: none;
+            text-align: left;
+            appearance: textfield;
+            margin: 0;
+
+            &:focus {
+                color: #ffcb6b;
+            }
+
+            &::selection {
+                color: black;
+                background-color: #ffcb6b;
+            }
+        }
+    }
 }
 
+.running-timer-container {
+    .progress {
+        display: flex;
+        width: var(--correct-size);
+        height: var(--correct-size);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: calc(infinity * 1px);
+        background: conic-gradient(white calc(var(--progress) * 1%), transparent calc(var(--progress) * 1%));
 
-.buttons-container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, 80%);
-    font-size: max(calc(var(--correct-size) / 12), 2em);
-    text-align: center;
-    align-items: center;
+        &:hover {
+            cursor: pointer;
+        }
+
+        &:focus {
+            outline: none;
+        }
+
+        .number {
+            background: black;
+            font-size: calc(var(--correct-size) / 2.5);
+            width: calc(var(--correct-size) - (var(--correct-size) / 16));
+            height: calc(var(--correct-size) - (var(--correct-size) / 16));
+            border-radius: inherit;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: auto;
+            color: white;
+        }
+    }
 }
-
-#interval-input {
-    width: fit-content;
-    background-color: black;
-    color: #ffffff;
-    font-size: inherit;
-    outline: none;
-    border: none;
-    text-align: left;
-    appearance: textfield;
-    margin: 0;
-}
-
-#interval-input:focus {
-    color: #ffcb6b;
-    outline: none;
-    border: none;
-    appearance: textfield;
-    margin: 0;
-}
-
-#startTimerButton {
-    color: #c3e88d;
-    border: none;
-    font-size: inherit;
-    background-color: transparent;
-}
-
-#startTimerButton:hover {
-    cursor: pointer;
-    text-decoration-line: underline;
-    text-decoration-style: solid;
-}
-
-#resetTimerButton {
-    color: #f07178;
-    border: none;
-    font-size: inherit;
-    background-color: transparent;
-}
-
-#resetTimerButton:hover {
-    cursor: pointer;
-    text-decoration-line: underline;
-    text-decoration-style: solid;
-}
-
-
-/* radial progress bar */
-
-.progress {
-    display: flex;
-    width: var(--correct-size);
-    height: var(--correct-size);
-
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
-    border-radius: calc(infinity * 1px);
-
-    background: conic-gradient(white calc(var(--progress) * 1%), transparent calc(var(--progress) * 1%));
-}
-
-.progress:hover {
-    cursor: pointer;
-}
-
-
-.progress .number {
-    background: black;
-    font-size: calc(var(--correct-size) / 2.5);
-
-    width: calc(var(--correct-size) - (var(--correct-size) / 16));
-    height: calc(var(--correct-size) - (var(--correct-size) / 16));
-    border-radius: inherit;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: auto;
-    color: white;
-}
-
-
 
 /* get screen width and height variables */
 @property --_w {
@@ -163,8 +180,14 @@ input[type=number] {
     initial-value: 100vh;
 }
 
-:root {
-    --screen-width: tan(atan2(var(--_w), 1px));
-    --screen-height: tan(atan2(var(--_h), 1px));
-    --correct-size: calc((min(var(--screen-width), var(--screen-height)) * 1px) / 1.5)
+/* remove arrows on minutes-input */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+    appearance: textfield;
 }
