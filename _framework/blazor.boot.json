@@ -1,11 +1,11 @@
 {
   "mainAssemblyName": "Anki Timer",
   "resources": {
-    "hash": "sha256-GJQOV+W9HQ7q6SmShtOfdj1OIDNG/yqUeWI7k2P+zJ8=",
+    "hash": "sha256-kAEHNJ4m5RfLPrEPpgheCejFhDpAbxUudIdo/3Nhja4=",
     "fingerprinting": {
-      "Anki Timer.crkos8w2vt.wasm": "Anki Timer.wasm",
-      "Microsoft.AspNetCore.Components.yl9m053y6f.wasm": "Microsoft.AspNetCore.Components.wasm",
-      "Microsoft.AspNetCore.Components.Web.2yoilt8nbw.wasm": "Microsoft.AspNetCore.Components.Web.wasm",
+      "Anki Timer.gj0j1fns48.wasm": "Anki Timer.wasm",
+      "Microsoft.AspNetCore.Components.ba32x98czo.wasm": "Microsoft.AspNetCore.Components.wasm",
+      "Microsoft.AspNetCore.Components.Web.csm5yc1ysf.wasm": "Microsoft.AspNetCore.Components.Web.wasm",
       "Microsoft.AspNetCore.Components.WebAssembly.qyco4g5bmd.wasm": "Microsoft.AspNetCore.Components.WebAssembly.wasm",
       "Microsoft.Extensions.Configuration.Abstractions.h19gpugiy5.wasm": "Microsoft.Extensions.Configuration.Abstractions.wasm",
       "Microsoft.Extensions.Configuration.Json.n3x20s9cxz.wasm": "Microsoft.Extensions.Configuration.Json.wasm",
@@ -66,9 +66,9 @@
       "System.Runtime.InteropServices.JavaScript.h0o384gvzn.wasm": "sha256-rwtckCDh2hrAqX7g10ShSPlmBHiMU4i3ALHrPCgasio="
     },
     "assembly": {
-      "Anki Timer.crkos8w2vt.wasm": "sha256-6EQ6B8tyUbOF5aQskBIA5oAM8z07A6tJZs3vS8bkw0M=",
-      "Microsoft.AspNetCore.Components.yl9m053y6f.wasm": "sha256-Jr7IcSpUBe9H+zcchY+HFucX0XFlk38Qd9Cg8CBsPAY=",
-      "Microsoft.AspNetCore.Components.Web.2yoilt8nbw.wasm": "sha256-ylfHQU3HPlNv2bpmHDZNZ/VANOoiy9qb2d6cOf6tcH4=",
+      "Anki Timer.gj0j1fns48.wasm": "sha256-hMnbMEirMd+46XAsI3R63NGNMp3ZsNM9wLTLCKi0Hkg=",
+      "Microsoft.AspNetCore.Components.ba32x98czo.wasm": "sha256-3X3aGR2OZIn364YDsCorDM8BKlTZ9M6oxqgS6dTd958=",
+      "Microsoft.AspNetCore.Components.Web.csm5yc1ysf.wasm": "sha256-nKTWOpk/eGA+YownyUDgl0y8Q+CKo6fKGi7UvEKT3eM=",
       "Microsoft.AspNetCore.Components.WebAssembly.qyco4g5bmd.wasm": "sha256-oitky6v+cC5sMmEkKurORgAL8h6q3jcJRkF7eYw2ubk=",
       "Microsoft.Extensions.Configuration.Abstractions.h19gpugiy5.wasm": "sha256-O/18yK/3Pj3wG2PLVJBN283TmIjoQ5k/JAdb5d/O+P8=",
       "Microsoft.Extensions.Configuration.Json.n3x20s9cxz.wasm": "sha256-7Wv00KMrZAHb5sX5acrBZ6dNoPfDuaNWlT69VNMGt1g=",
